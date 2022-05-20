@@ -8,8 +8,6 @@ orbs:
 commands:
    # Exercise - Rollback
    destroy_environment:
-      docker:
-       - image: amazon/aws-cli
       steps:
        - run:
            name: Destroy environment
