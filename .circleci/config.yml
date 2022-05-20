@@ -3,8 +3,7 @@ version: 2.1
 orbs: 
 # aws-cli: circleci/aws-cli@3.1.1   
         
-  aws-cli: circleci/aws-cli@0.1.13
-
+  aws-cli: circleci/aws-cli@2.0.3
 commands:
    # Exercise - Rollback
    destroy_environment:
@@ -13,7 +12,8 @@ commands:
            name: Destroy environment
            when: on_fail
            command: |
-             aws cloudformation delete-stack --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:7}
+             aws --version
+                   #aws cloudformation delete-stack --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:7}
 jobs:
  create_infrastructure: 
       docker:
