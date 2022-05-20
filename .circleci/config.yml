@@ -27,7 +27,7 @@ jobs:
                 --region us-west-2
         - run: return 1 
         -  destroy_environment
-           when: on fail
+           when: on_fail
 
 # Exercise: Config and Deployment
  configure_infrastructure: 
