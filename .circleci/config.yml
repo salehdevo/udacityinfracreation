@@ -8,7 +8,9 @@ orbs:
 commands:
    # Exercise - Rollback
    destroy_environment:
-     steps:
+      docker:
+       - image: amazon/aws-cli
+      steps:
        - run:
            name: Destroy environment
            # ${CIRCLE_WORKFLOW_ID} is a Built-in environment variable 
