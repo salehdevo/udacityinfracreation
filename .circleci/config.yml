@@ -10,6 +10,12 @@ commands:
    destroy_environment:
       steps:
        - run:
+           name: Install PIP
+           command: sudo apt-get install python-pip python-dev
+       - run:
+           name: Install awscli
+           command: sudo pip install awscli              
+       - run:
            name: Destroy environment
            # ${CIRCLE_WORKFLOW_ID} is a Built-in environment variable 
            # ${CIRCLE_WORKFLOW_ID:0:5} takes the first 5 chars of the variable CIRCLE_CI_WORKFLOW_ID 
